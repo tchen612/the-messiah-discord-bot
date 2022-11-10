@@ -103,7 +103,7 @@ async def on_message(message):
 
 @tree.command(name = "help", description = "Shows help for the bot", guild = discord.Object(id = GUILD_ID))
 async def self(interaction: discord.Interaction):
-    em = discord.Embed(title = "The Messiah User Guide", description = 'Find the source code here:' )
+    em = discord.Embed(title = "The Messiah User Guide", description = 'Find the source code here: https://github.com/tchen612/the-messiah-discord-bot')
     
     em.add_field(name = "Commands", value = "/help\n/stoic-chad\n/volleyball")
 
