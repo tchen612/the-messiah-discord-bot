@@ -77,6 +77,8 @@ async def on_raw_reaction_remove(payload):
             role = discord.utils.get(guild.roles, name='terraria')
         elif payload.emoji.name == 'minecraft':
             role = discord.utils.get(guild.roles, name='minecraft')
+        elif payload.emoji.name == 'pokemon':
+            role = discord.utils.get(guild.roles, name='Pokémon')
         else:
             role = None
 
@@ -122,6 +124,16 @@ async def self(interaction: discord.Interaction):
 
     file= open('stoic-quotes.txt', 'r')
     lines = file.readlines()[line_number:line_number+3]
+
+    await interaction.response.send_message(''.join(lines))
+
+@tree.command(name = "colour", description = "Asks you what your favourite colour is", guild = discord.Object(id = GUILD_ID))
+async def self(interaction: discord.Interaction):
+    # generate a random line number to read a quote off of
+    line_number = random.randint(1, 69)
+
+    file= open('what-is-your-favourite-colour.txt', 'r')
+    lines = file.readlines()[line_number]
 
     await interaction.response.send_message(''.join(lines))
 
