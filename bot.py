@@ -54,6 +54,8 @@ async def on_raw_reaction_add(payload):
             role = discord.utils.get(guild.roles, name='terraria')
         elif payload.emoji.name == 'minecraft':
             role = discord.utils.get(guild.roles, name='minecraft')
+        elif payload.emoji.name == 'pokemon':
+            role = discord.utils.get(guild.roles, name='pokemon')
         else:
             role = None
 
@@ -78,7 +80,7 @@ async def on_raw_reaction_remove(payload):
         elif payload.emoji.name == 'minecraft':
             role = discord.utils.get(guild.roles, name='minecraft')
         elif payload.emoji.name == 'pokemon':
-            role = discord.utils.get(guild.roles, name='Pokémon')
+            role = discord.utils.get(guild.roles, name='pokemon')
         else:
             role = None
 
